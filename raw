@@ -1,0 +1,16 @@
+#!/bin/bash
+PURPLE='\033[0;35m'; BLUE='\033[0;34m'; GREEN='\033[0;32m'; NC='\033[0m'
+echo -e "${PURPLE}"
+echo "  _______ __   _ _______  ______"
+echo "  |______ | \\  | |_____| |_____/"
+echo "  |______ |  \\_| |     | |    \\_"
+echo -e "${BLUE}           F L U I D N O D E S${NC}"
+echo -e "${GREEN}         Made by Matthias${NC}"
+echo ""
+read -p "Enter FQDN (e.g., panel.fluidnodes.com): " FQDN
+[ -z "$FQDN" ] && FQDN=$(hostname -I | awk '{print $1}')
+echo -e "${PURPLE}🚀 Installing FLUIDNODES on: $FQDN${NC}"
+curl -s https://raw.githubusercontent.com/fluidnodes/installer/main/install.sh | bash -s -- --fqdn=$FQDN --email=godplayzcraft@gmail.com --pass=@matthias123
+echo -e "${GREEN}✅ FLUIDNODES installed!${NC}"
+echo -e "${BLUE}🌐 Access: https://$FQDN${NC}"
+echo -e "${PURPLE}📧 Admin: godplayzcraft@gmail.com | Pass: @matthias123${NC}"
